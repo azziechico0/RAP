@@ -6,7 +6,7 @@
 <AS4LOCAL>N</AS4LOCAL>
 <AS4USER>SMATESANZ</AS4USER>
 <AS4DATE>2020-10-14</AS4DATE>
-<AS4TIME>09:34:01</AS4TIME>
+<AS4TIME>12:40:44</AS4TIME>
 <SOURCE>@AbapCatalog.sqlViewName: 'ZSMB_I_SO'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
