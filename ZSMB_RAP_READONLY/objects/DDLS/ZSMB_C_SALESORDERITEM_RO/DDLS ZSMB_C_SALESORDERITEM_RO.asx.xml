@@ -5,8 +5,8 @@
 <DDLNAME>ZSMB_C_SALESORDERITEM_RO</DDLNAME>
 <AS4LOCAL>N</AS4LOCAL>
 <AS4USER>SMATESANZ</AS4USER>
-<AS4DATE>2020-10-14</AS4DATE>
-<AS4TIME>12:40:43</AS4TIME>
+<AS4DATE>2020-10-15</AS4DATE>
+<AS4TIME>10:27:24</AS4TIME>
 <SOURCE>@AbapCatalog.sqlViewName: 'ZSMB_C_SOI'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
@@ -24,13 +24,7 @@ define view ZSMB_C_SALESORDERITEM_RO
      @UI.facet: [{ id              : 'idSalesOrderItem',
                    type            : #IDENTIFICATION_REFERENCE,                         
                    label           : 'SalesOrderItem(Identification)',
-                   position        : 10 }]
-//                 { id: 'idLineItemProduct',
-//                   type            : #LINEITEM_REFERENCE,
-//                   label           : 'Product (LineItem_Reference)',
-//                   position        : 20,
-//                   targetQualifier : 'fgProductId',
-//                   targetElement   : '_Product' }]    
+                   position        : 10 }]  
                                    
       @UI.hidden: true
       key SalesOrderItem.Node_Key,
@@ -53,12 +47,7 @@ define view ZSMB_C_SALESORDERITEM_RO
       SalesOrderItem.NetAmount,       
       @UI.lineItem: { qualifier: 'fgSOItem', position: 50, label: 'Tax Amount' }
       @UI.identification: { position: 50, label: 'Tax Amount' }     
-      SalesOrderItem.TaxAmount
-//      SalesOrderItem.Product,
-      
-//       /* Exposing value via associations */
-//      @UI.lineItem: { position: 10, qualifier: 'fgProductId' }                
-//      _Product     
+      SalesOrderItem.TaxAmount    
 }
 /*+[internal] {
 "BASEINFO":
@@ -79,7 +68,7 @@ define view ZSMB_C_SALESORDERITEM_RO
 }*/</SOURCE>
 <PARENTNAME></PARENTNAME>
 <ACTFLAG></ACTFLAG>
-<CHGFLAG>45</CHGFLAG>
+<CHGFLAG></CHGFLAG>
 <SOURCE_TYPE>V</SOURCE_TYPE>
 <SOURCE_ORIGIN>0</SOURCE_ORIGIN>
 <ABAP_LANGUAGE_VERSION></ABAP_LANGUAGE_VERSION>
