@@ -5,8 +5,8 @@
 <DDLNAME>ZSMB_C_SALESORDER_RO</DDLNAME>
 <AS4LOCAL>N</AS4LOCAL>
 <AS4USER>SMATESANZ</AS4USER>
-<AS4DATE>2020-10-14</AS4DATE>
-<AS4TIME>12:40:44</AS4TIME>
+<AS4DATE>2020-10-19</AS4DATE>
+<AS4TIME>09:34:52</AS4TIME>
 <SOURCE>@AbapCatalog.sqlViewName: 'ZSMB_C_SO'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
@@ -83,9 +83,7 @@ define view ZSMB_C_SALESORDER_RO
 /*  Asigna los valores a la seccion creada anteriormente en el @UI.facet                    */ 
 /*------------------------------------------------------------------------------------------*/    
       @UI.fieldGroup: { position: 10, label: 'Name', qualifier: 'fgSOHeader' }    
-      concat_with_space(SalesOrder._CustomerContact.first_name, 
-                        SalesOrder._CustomerContact.last_name,
-                        1) as CustomerName,
+      SalesOrder.CustomerName as CustomerName,
       @UI.fieldGroup: { position: 20, label: 'Email', qualifier: 'fgSOHeader'}                         
       SalesOrder._CustomerContact.email_address,
       @UI.fieldGroup: { position: 30, label: 'Phone', qualifier: 'fgSOHeader'}       
@@ -143,7 +141,7 @@ define view ZSMB_C_SALESORDER_RO
 }*/</SOURCE>
 <PARENTNAME></PARENTNAME>
 <ACTFLAG></ACTFLAG>
-<CHGFLAG></CHGFLAG>
+<CHGFLAG>1</CHGFLAG>
 <SOURCE_TYPE>V</SOURCE_TYPE>
 <SOURCE_ORIGIN>0</SOURCE_ORIGIN>
 <ABAP_LANGUAGE_VERSION></ABAP_LANGUAGE_VERSION>

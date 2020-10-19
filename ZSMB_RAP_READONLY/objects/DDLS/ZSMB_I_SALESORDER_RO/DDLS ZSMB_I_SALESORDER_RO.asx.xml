@@ -5,8 +5,8 @@
 <DDLNAME>ZSMB_I_SALESORDER_RO</DDLNAME>
 <AS4LOCAL>N</AS4LOCAL>
 <AS4USER>SMATESANZ</AS4USER>
-<AS4DATE>2020-10-14</AS4DATE>
-<AS4TIME>12:40:44</AS4TIME>
+<AS4DATE>2020-10-19</AS4DATE>
+<AS4TIME>09:34:25</AS4TIME>
 <SOURCE>@AbapCatalog.sqlViewName: 'ZSMB_I_SO'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
@@ -47,6 +47,9 @@ define view ZSMB_I_SALESORDER_RO
         $session.system_language as Language,        
         SalesOrder.overall_status as OverallStatus,
         SalesOrder.buy_contact_guid as CustomerContactUUID,
+        concat_with_space(_CustomerContact.first_name, 
+                          _CustomerContact.last_name,
+                          1) as CustomerName,        
         /* Associations */   
         _Item,  
         _OverallStatus,        
@@ -58,6 +61,7 @@ define view ZSMB_I_SALESORDER_RO
 {
 "FROM":
 [
+"SNWD_BPA_CONTACT",
 "SNWD_SO"
 ],
 "ASSOCIATED":
@@ -75,7 +79,7 @@ define view ZSMB_I_SALESORDER_RO
 }*/</SOURCE>
 <PARENTNAME></PARENTNAME>
 <ACTFLAG></ACTFLAG>
-<CHGFLAG></CHGFLAG>
+<CHGFLAG>24</CHGFLAG>
 <SOURCE_TYPE>V</SOURCE_TYPE>
 <SOURCE_ORIGIN>0</SOURCE_ORIGIN>
 <ABAP_LANGUAGE_VERSION></ABAP_LANGUAGE_VERSION>
