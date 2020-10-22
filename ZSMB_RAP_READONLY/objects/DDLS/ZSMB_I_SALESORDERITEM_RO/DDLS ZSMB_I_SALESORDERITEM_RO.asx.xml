@@ -5,8 +5,8 @@
 <DDLNAME>ZSMB_I_SALESORDERITEM_RO</DDLNAME>
 <AS4LOCAL>N</AS4LOCAL>
 <AS4USER>SMATESANZ</AS4USER>
-<AS4DATE>2020-10-14</AS4DATE>
-<AS4TIME>12:40:43</AS4TIME>
+<AS4DATE>2020-10-22</AS4DATE>
+<AS4TIME>10:19:45</AS4TIME>
 <SOURCE>@AbapCatalog.sqlViewName: 'ZSMB_I_SOI'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
@@ -16,6 +16,8 @@
 
 define view ZSMB_I_SALESORDERITEM_RO 
    as select from snwd_so_i as SalesOrderItem 
+  
+   association to parent ZSMB_I_SALESORDER_RO     as _SalesOrder     on  $projection.Parent_Key = _SalesOrder.Node_Key   
   
    association [1..1] to snwd_pd          as _Product          on $projection.Product = _Product.node_key   
 {
@@ -33,7 +35,8 @@ define view ZSMB_I_SALESORDERITEM_RO
         SalesOrderItem.tax_amount       as TaxAmount,
 
         /* Associations */   
-        _Product  
+        _Product,
+        _SalesOrder  
 }
 /*+[internal] {
 "BASEINFO":
@@ -44,6 +47,7 @@ define view ZSMB_I_SALESORDERITEM_RO
 ],
 "ASSOCIATED":
 [
+"ZSMB_I_SALESORDER_RO",
 "SNWD_PD"
 ],
 "BASE":
@@ -55,7 +59,7 @@ define view ZSMB_I_SALESORDERITEM_RO
 }*/</SOURCE>
 <PARENTNAME></PARENTNAME>
 <ACTFLAG></ACTFLAG>
-<CHGFLAG></CHGFLAG>
+<CHGFLAG>9DC</CHGFLAG>
 <SOURCE_TYPE>V</SOURCE_TYPE>
 <SOURCE_ORIGIN>0</SOURCE_ORIGIN>
 <ABAP_LANGUAGE_VERSION></ABAP_LANGUAGE_VERSION>
