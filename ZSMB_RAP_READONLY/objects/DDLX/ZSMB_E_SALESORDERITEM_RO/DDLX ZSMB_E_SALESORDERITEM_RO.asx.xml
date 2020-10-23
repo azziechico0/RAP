@@ -5,9 +5,9 @@
 <DDLXNAME>ZSMB_E_SALESORDERITEM_RO</DDLXNAME>
 <VERSION>A</VERSION>
 <CHANGED_BY>SMATESANZ</CHANGED_BY>
-<CHANGED_ON>2020-10-22</CHANGED_ON>
-<CHANGED_AT>13:36:14</CHANGED_AT>
-<UUID>0050569721421EEB858B594CCB43D30B</UUID>
+<CHANGED_ON>2020-10-23</CHANGED_ON>
+<CHANGED_AT>10:39:34</CHANGED_AT>
+<UUID>0050569721421EEB85A168DC0A5EFA64</UUID>
 </DDLXSRC>
 </DDLXSRC>
 <DDLXSRCT>
@@ -40,12 +40,13 @@ annotate view ZSMB_C_SALESORDERITEM_RO
       Node_Key;
       @UI.hidden: true      
       Parent_Key;
-      @UI: { lineItem: [ { position: 10, label: 'Sales Order Item', qualifier: 'fgSOItem' } ],  
+      @UI: { selectionField: [ {position: 10 } ],
+             lineItem: [ { position: 10, label: 'Sales Order Item', qualifier: 'fgSOItem' } ],  
              identification: [ { position: 10, label: 'Sales Order Item' } ] } 
       SalesOrderItemID;
       @UI: { lineItem: [ { position: 20, label: 'Product ID', qualifier: 'fgSOItem' } ],  
              identification: [ { position: 20, label: 'Product ID' } ] }    
-      productid;                 
+      ProductId;                 
 //    CurrencyCode
       @UI: { lineItem: [ { position: 30, label: 'Gross Amount', qualifier: 'fgSOItem' } ],  
              identification: [ { position: 30, label: 'Gross Amount' } ] }       
@@ -258,6 +259,13 @@ annotate view ZSMB_C_SALESORDERITEM_RO
 </DDLX_RT_DATA>
 <DDLX_RT_DATA>
 <DDLXNAME>ZSMB_E_SALESORDERITEM_RO</DDLXNAME>
+<ELEMENT>SALESORDERITEMID</ELEMENT>
+<NAME>UI.SELECTIONFIELD$1$.POSITION</NAME>
+<ELEMENT_TYPE>S</ELEMENT_TYPE>
+<VALUE>10</VALUE>
+</DDLX_RT_DATA>
+<DDLX_RT_DATA>
+<DDLXNAME>ZSMB_E_SALESORDERITEM_RO</DDLXNAME>
 <ELEMENT>TAXAMOUNT</ELEMENT>
 <NAME>UI.IDENTIFICATION$1$.LABEL</NAME>
 <ELEMENT_TYPE>S</ELEMENT_TYPE>
@@ -391,8 +399,8 @@ annotate view ZSMB_C_SALESORDERITEM_RO
 <EXTENDED_ARTIFACT>ZSMB_C_SALESORDERITEM_RO</EXTENDED_ARTIFACT>
 <VARIANT></VARIANT>
 <LAYER>1500</LAYER>
-<DT_UUID>0050569721421EEB858B594CCB43D30B</DT_UUID>
-<RT_HASH>636DF1AF62B27E2DE3F5EF06AAF1CD3696D29898</RT_HASH>
+<DT_UUID>0050569721421EEB85A168DC0A5EFA64</DT_UUID>
+<RT_HASH>4AF163BFF9C193A5D9E89A564B5BAC46B33A4A6F</RT_HASH>
 <GEN_VERSION>0</GEN_VERSION>
 </DDLX_RT_HEADER>
 </DDLX_RT_HEADER>
